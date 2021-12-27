@@ -30,7 +30,7 @@ public class ApiClientService implements UserDetailsService {
 
     public UserDetails createClient(String username, String password) {
         apiClientRepository.findById(username).ifPresent(apiClient -> {
-            throw new IllegalStateException(String.format("Client with username %s exists", username));
+            throw new IllegalArgumentException(String.format("Client with username %s exists", username));
         });
         ApiClient apiClient = new ApiClient(
                 username,
