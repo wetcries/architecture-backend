@@ -13,7 +13,7 @@ import java.util.List;
  * Контроллер по работе с маркетплейсом.
  */
 @RestController
-@RequestMapping("/api/v1/marketplace")
+@RequestMapping("/api/v2/marketplace")
 public class MarketplaceController {
     MarketplaceService marketplaceService;
 

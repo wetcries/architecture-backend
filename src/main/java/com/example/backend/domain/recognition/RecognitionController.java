@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Контроллер по работе с распознаванием автомобилей по фото.
  */
 @RestController
-@RequestMapping("/api/v1/recognition")
+@RequestMapping("/api/v2/recognition")
 public class RecognitionController {
     private final RecognitionService recognitionService;
 

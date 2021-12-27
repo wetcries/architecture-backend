@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
  * Контроллер для рассчета кредитов.
  */
 @RestController
-@RequestMapping("/api/v1/credits")
+@RequestMapping("/api/v2/credits")
 public class CreditController {
     CreditCalculatorService creditService;
 
