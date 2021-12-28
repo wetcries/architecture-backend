@@ -15,5 +15,5 @@ public interface RecognitionClient {
     String helloWorld();
 
     @RequestMapping(method = RequestMethod.POST, value = "/recognition")
-    RecognitionResponse recognition(@RequestBody RecognitionRequest request);
+    RecognitionResponse recognition(RecognitionRequest request);
 }
