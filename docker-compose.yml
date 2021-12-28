@@ -1,0 +1,21 @@
+services:
+  backend-database:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=GZVcnLBTsrdsTXga
+      - POSTGRES_USER=backend
+      - POSTGRES_DB=backend
+    hostname: backenddatabase
+
+  backend:
+    image: backend:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - "backend-database"
+      - "mlserver"
+
+  mlserver:
+    image: kolyapak98/server_ml
+    hostname: mlserver

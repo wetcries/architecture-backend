@@ -1,0 +1,22 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /backend
+
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://backenddatabase:5432/backend
+    username: backend
+    password: GZVcnLBTsrdsTXga
+    driverClassName: org.postgresql.Driver
+
+ml-server-url: http://mlserver:5000
+
+jwt:
+  secretKey: WB2wU7KtQGtNZaKzumQQT6JfSZYEFugydcTYwDv4CdHQufzaFhQBtxPFbCLfxrdM
+  tokenExpirationAfterDays: 10
