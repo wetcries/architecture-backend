@@ -49,6 +49,8 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzI
 Ознакомиться с функциональностью API сервиса можно по следующему пути `http://localhost:8080/backend/swagger-ui.html`.
 
 #### P.S.
-Также в репозитории находятся Dockerfile для создания image сервера 
-и Architecture Backend.postman_collection.json с Postman коллекцией
-методов API сервера.
+Также в репозитории находятся:
+* Dockerfile для создания image сервера 
+* Architecture Backend.postman_collection.json с Postman коллекцией
+методов API сервера
+* prod_application.yaml с prod-конфигурацией сервиса
