@@ -34,3 +34,4 @@ build/
 
 ### Volume for Postgres container ###
 postgres
+volumes

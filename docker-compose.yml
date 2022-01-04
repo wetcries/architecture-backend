@@ -8,12 +8,14 @@ services:
       - POSTGRES_DB=backend
     hostname: backenddatabase
     volumes:
-      - ./postgres/data:/var/lib/postgresql/data
+      - ./volumes/postgres/data:/var/lib/postgresql/data
 
   backend:
     image: wetcries/architecture-backend:latest
     ports:
       - "8080:8080"
+    volumes:
+      - ./volumes/backend/config:/usr/src/myapp/config
     depends_on:
       - "backend-database"
       - "mlserver"
