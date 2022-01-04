@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/clients")
 public class ApiClientsController {
     private final ApiClientService apiClientService;
 
@@ -16,8 +15,13 @@ public class ApiClientsController {
         this.apiClientService = apiClientService;
     }
 
-    @PostMapping
+    @PostMapping("/api/v1/clients")
     public void createNewClient(@RequestBody UsernameAndPasswordAuthenticationRequest usernameAndPassword) {
+        apiClientService.createClient(usernameAndPassword.getUsername(), usernameAndPassword.getPassword());
+    }
+
+    @PostMapping("/register")
+    public void register(@RequestBody UsernameAndPasswordAuthenticationRequest usernameAndPassword) {
         apiClientService.createClient(usernameAndPassword.getUsername(), usernameAndPassword.getPassword());
     }
 

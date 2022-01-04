@@ -52,6 +52,9 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
                 .setExpiration(java.sql.Date.valueOf(LocalDate.now().plusDays(1)))
                 .signWith(secretKey)
                 .compact();
+        String body = new ObjectMapper().writeValueAsString(new JwtResponse(token));
         response.addHeader(HttpHeaders.AUTHORIZATION, "Bearer " + token);
+        response.getWriter().write(body);
+        response.getWriter().flush();
     }
 }
