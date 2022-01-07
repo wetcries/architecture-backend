@@ -40,7 +40,7 @@ public class MarketplaceController {
     }
 
     @Operation(summary = "Get car by id")
-    @GetMapping("/{id}")
+    @GetMapping("/cars/{id}")
     public Car getCarById(@PathVariable String id) {
         return marketplaceService.getCarById(id);
     }
