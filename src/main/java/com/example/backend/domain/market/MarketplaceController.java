@@ -1,11 +1,10 @@
 package com.example.backend.domain.market;
 
+import com.example.backend.domain.market.exceptions.CarNotFoundException;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -38,5 +37,16 @@ public class MarketplaceController {
     @GetMapping("/brands/{brand}/models/{model}")
     public List<Car> getCarsByBrandAndModel(@PathVariable String brand, @PathVariable String model) {
         return marketplaceService.getCarsByBrandAndModel(brand, model);
+    }
+
+    @Operation(summary = "Get car by id")
+    @GetMapping("/{id}")
+    public Car getCarById(@PathVariable String id) {
+        return marketplaceService.getCarById(id);
+    }
+
+    @ResponseStatus(value = HttpStatus.NOT_FOUND)
+    @ExceptionHandler(CarNotFoundException.class)
+    public void illegalArgument() {
     }
 }

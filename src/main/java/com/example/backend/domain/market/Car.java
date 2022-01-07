@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 /**
@@ -12,6 +13,7 @@ import java.util.stream.Collectors;
  */
 @Data
 public class Car {
+    private UUID id;
     /**
      * Бренд автомобиля.
      */
@@ -51,6 +53,7 @@ public class Car {
     }
 
     public Car(CarEntity carEntity) {
+        this.id = carEntity.getId();
         this.brand = carEntity.getBrand();
         this.model = carEntity.getModel();
         this.minPrice = carEntity.getMinPrice();
